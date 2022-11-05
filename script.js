@@ -10,6 +10,69 @@ const dining_halls = {
     ]
 }
 
+const housing = {
+  "housing":[
+      {"name": "Middle Earth", "image": ""},
+      {"name": "Mesa Court", "image": ""}
+  ]
+}
+
+const libraries = {
+  "libraries":[
+      {"name": "Langson Library", "image": ""},
+      {"name": "Science Library", "image": ""}
+  ]
+}
+
+const recreation = {
+"recreation":[
+      {"name": "eSports Arena", "image": ""},
+      {"name": "Anteater Recreation Center", "image": ""}
+  ]
+}
+
+const convenience = {
+  "convenience":[
+      {"name": "Zot N Go", "image": ""},
+      {"name": "Sidedoor", "image": ""}
+  ]
+}
+
+const OS = {
+  "OS":[
+      {"name": "Mac", "image": ""},
+      {"name": "Windows", "image": ""}
+  ]
+}
+
+const boba = {
+  "boba":[
+      {"name": "Cha", "image": ""},
+      {"name": "Sharetea", "image": ""}
+  ]
+}
+
+const sports = {
+  "sports":[
+      {"name": "Basketball", "image": ""},
+      {"name": "Volleyball", "image": ""}
+  ]
+}
+
+const flasks = {
+  "flasks":[
+      {"name": "Hydro Flask", "image": ""},
+      {"name": "Thermoflask", "image": ""}
+  ]
+}
+
+const studyspots = {
+  "studyspots":[
+      {"name": "Study in Aldrich Park", "image": ""},
+      {"name": "Study in a library", "image": ""}
+  ]
+}
+
 app.use(cors())
 
 app.get('/', (req, res) => {
