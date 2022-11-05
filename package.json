@@ -1,0 +1,22 @@
+{
+  "name": "zotclash",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacobseunglee/zotclash.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jacobseunglee/zotclash/issues"
+  },
+  "homepage": "https://github.com/jacobseunglee/zotclash#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
