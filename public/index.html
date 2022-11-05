@@ -1,8 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
-    <title>Hello world</title>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZotClash</title>
 </head>
+
 <body>
-    hello world
+    <div class="container">
+        <!-- Integrating HTML, CSS and JS -->
+        <!-- 
+            This chunk of the site uses HTML, CSS and JS. If you look in script.js,
+            you can see how you can use JS to select elements from the HTML document.
+            If you look in styles.css, you can see how you can use CSS to style elements
+            in the HTML document.
+            By using the ids of each of the elements, both the JS and CSS files are able to
+            extract and modify the elements without having to do so in index.html. Otherwise,
+            if everything is in one file, the code will look extremely messy!
+            Here, we have a greeting initially called "Hello, world". However, using JS, you can
+            change the greeting to a custom input by clicking the button.
+        -->
+        <h1 id="greeting">Hello, world!</h1>
+        <div>
+            <div>
+                <label for="exampleFormControlInput1" class="form-label">What is your name?</label>
+                <input id="exampleFormControlInput1" placeholder="Peter the Anteater">
+            </div>
+            <button type="submit" id="exampleFormBtn">Submit</button>
+        </div>
+        <br/>
+        <img src="brandywine.jpg" id="image1" onclick="getImg()">
+        
+    </div>    
+    <script src="script.js"></script>
 </body>
+</html>
