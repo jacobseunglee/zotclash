@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 3000
+const cors = require('cors')
 
 const dining_halls = {
     "dining_halls":[
@@ -8,6 +9,8 @@ const dining_halls = {
         {"name": "Anteatery", "image": "https://global-uploads.webflow.com/5eec789d24d891b6d1d15438/5f20833538e3463a336d44ff_b02_RSM-Design_Anteatery-Food-Hall_College-Food-Hall-Design.jpg"}
     ]
 }
+
+app.use(cors())
 
 app.get('/', (req, res) => {
   res.send(dining_halls)
