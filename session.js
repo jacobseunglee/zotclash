@@ -1,6 +1,29 @@
-function handleSession(x, y)
+function handleSession(db)
 {
-    console.log("from session")
+    return function(req, res)
+    {
+        console.log("from session");
+        res.send("123");
+        try
+        {
+
+        }
+        catch(e)
+        {
+            console.error(e);
+        }
+        finally
+        {
+    
+        }
+    }
+    
 }
 
-module.exports = {handleSession};
+module.exports = function (db) 
+{
+    var module = {};
+    module.handleSession = handleSession(db);
+
+    return module;
+}

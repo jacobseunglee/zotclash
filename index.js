@@ -3,8 +3,7 @@ const { MongoClient } = require("mongodb");
 const app = express();
 const port = 3000;
 const cors = require('cors');
-const prompt = require("./prompt");
-const session = require("./session");
+
 var dotenv = require('dotenv');
 dotenv.config();
 var url = process.env.MONGOLAB_URI;
@@ -12,6 +11,9 @@ var url = process.env.MONGOLAB_URI;
 async function main() {
   const uri = url;
   const client = new MongoClient(uri);
+  const database = client.db("ClashData");
+  const prompt = require("./prompt");
+  const session = require("./session")(database);
   try{  
     await client.connect();
     await listDatabases(client);
@@ -24,6 +26,22 @@ async function main() {
   {
     await client.close();
   }
+
+  app.use(cors())
+
+app.get('/', (req, res) => {
+  randInt = randomIntFromInterval(0, pairs.length-1);
+  res.send(pairs[randInt])
+  pairs.splice(randInt, 1); // Remove that element from the list so it's not repeated
+})
+
+app.get('/prompt', prompt.handlePrompt)
+
+app.get('/session', session.handleSession)
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
 
 }
 
@@ -111,20 +129,4 @@ pairs = [dining_halls, housing, libraries, recreation, convenience, OS, boba, sp
 function randomIntFromInterval(min, max) { // min and max included 
   return Math.floor(Math.random() * (max - min + 1) + min)
 }
-
-app.use(cors())
-
-app.get('/', (req, res) => {
-  randInt = randomIntFromInterval(0, pairs.length-1);
-  res.send(pairs[randInt])
-  pairs.splice(randInt, 1); // Remove that element from the list so it's not repeated
-})
-
-app.get('/prompt', prompt.handlePrompt)
-
-app.get('/session', session.handleSession)
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
 
