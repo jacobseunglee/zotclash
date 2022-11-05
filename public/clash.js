@@ -3,32 +3,26 @@ imgIndex = 0
 chosenImgs = []
 
 
-async function getImg(imgURL) {
-
+function grabImgData() {
     fetch('http://localhost:3000')
     .then((response) => response.json())
-    .then((data) => console.log(data));
+    .then((data) => {
+        myimg1.src = data.dining_halls[0].image;
+        myimg2.src = data.dining_halls[1].image;
+    });
 
-    myimg = document.getElementById('image1');
-    chosenImgs.push(myimg.src);
-    myimg.src = nextImg();
 }
 
+async function getImg(imgURL) {
 
-images = {
-    'arc': 'https://images.squarespace-cdn.com/content/v1/5b60d4fa70e802968763e7f5/1541539890535-UJ5P5NGX9C7XME811A6W/ARC+Overhead%2C+Source-+UCI+Campus+Recreation.jpg?format=2500w',
-    'brandywine': 'https://www.henselphelps.com/wp-content/uploads/2020/04/UCI-Middle-Earth-Towers-c-Kevin-Scott_7.jpg'
-}
+    myimg1 = document.getElementById('image1');
+    myimg2 = document.getElementById('image2');
+    fetch('http://localhost:3000')
+    .then((response) => response.json())
+    .then((data) => {
+        myimg1.src = data.dining_halls[0].image;
+        myimg2.src = data.dining_halls[1].image;
+    });
 
-imgNames = ['arc', 'brandywine'];
 
-function nextImg() {
-
-    let imgURL = images[ imgNames[imgIndex] ];
-    imgIndex++;
-    if (imgIndex == imgNames.length) {
-        console.log('Last image!');
-        console.log(chosenImgs);
-    }
-    return imgURL
 }

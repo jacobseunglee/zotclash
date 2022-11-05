@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css">
     <title>ZotClash</title>
 </head>
+
+
 
 <body>
     <div class="container">
@@ -30,9 +34,20 @@
             <button type="submit" id="exampleFormBtn">Submit</button>
         </div>
         <br/>
-        <img src="brandywine.jpg" id="image1" onclick="getImg()">
-        
     </div>    
-    <script src="script.js"></script>
+    <center>
+        <div class="row">
+            <div class="column">
+              <img src="brandywine.jpg" id="image1" alt="Snow" style="width:100%" onclick="getImg()">
+            </div>
+            <div class="column">
+              <img src="brandywine.jpg" id ="image2" alt="Forest" style="width:100%" onclick="getImg()">
+            </div>
+          </div>        
+    </center>
+    
+
+
+    <script src="clash.js"></script>
 </body>
 </html>

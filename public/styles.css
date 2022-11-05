@@ -1,0 +1,17 @@
+.row {
+    display: flex;
+  }
+  
+  /* Create three equal columns that sits next to each other */
+  .column {
+    flex: 33.33%;
+    padding: 5px;
+  }
+
+img {
+    float: left;
+    width:  100px;
+    height: 350px;
+    object-fit: cover;
+    opacity: 0.5;
+}
