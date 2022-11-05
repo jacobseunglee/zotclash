@@ -1,28 +1,31 @@
-imgIndex = 0
-
-chosenImgs = []
-
+const IMAGES_TO_SHOW = 10
+let numPairsShown = 0
 
 function grabImgData() {
+
+    myimg1 = document.getElementById("image1")
+    myimg2 = document.getElementById("image2")
+    text1 = document.getElementById("text1")
+    text2 = document.getElementById("text2")
     fetch('http://localhost:3000')
     .then((response) => response.json())
     .then((data) => {
-        myimg1.src = data.dining_halls[0].image;
-        myimg2.src = data.dining_halls[1].image;
+
+        choice1 = data.choices[0];
+        choice2 = data.choices[1];
+
+        text1.textContent = choice1.name;
+        text2.textContent = choice2.name;
+
+        myimg1.src = choice1.image;
+        myimg2.src = choice1.image;
+
+        numPairsShown++;
+        if (numPairsShown == IMAGES_TO_SHOW) { // Last image!
+            console.log("game over");
+        }
     });
 
 }
 
-async function getImg(imgURL) {
-
-    myimg1 = document.getElementById('image1');
-    myimg2 = document.getElementById('image2');
-    fetch('http://localhost:3000')
-    .then((response) => response.json())
-    .then((data) => {
-        myimg1.src = data.dining_halls[0].image;
-        myimg2.src = data.dining_halls[1].image;
-    });
-
-
-}
+grabImgData()
