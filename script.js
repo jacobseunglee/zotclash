@@ -1,11 +1,14 @@
-const express = require('express')
+const express = require('express');
 const { MongoClient } = require("mongodb");
-const app = express()
-const port = 3000
-const cors = require('cors')
+const app = express();
+const port = 3000;
+const cors = require('cors');
+var dotenv = require('dotenv');
+dotenv.config();
+var url = process.env.MONGOLAB_URI;
 
 async function main() {
-  const uri = "mongodb+srv://ZotClash:Zothacks2022@zotclash.jegpvvx.mongodb.net/?retryWrites=true&w=majority"
+  const uri = url;
   const client = new MongoClient(uri);
   try{  
     await client.connect();
