@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- JQuery dependency -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+            integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+    <!-- ADD SEMANTIC UI LIBRARY SOURCE CODE -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js"
+            integrity="sha512-Xo0Jh8MsOn72LGV8kU5LsclG7SUzJsWGhXbWcYs2MAmChkQzwiW/yTQwdJ8w6UA9C6EVG18GHb/TrYpYCjyAQw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css"
+          integrity="sha512-KXol4x3sVoO+8ZsWPFI/r5KBVB/ssCGB5tsv2nVOKwLg33wTFP3fmnXa47FdSVIshVTgsYk/1734xSk9aFIa4A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Zotclash</title>
+    <style>
+        #gradient1 {
+            height: 550px;
+            width: 101%;
+            background-color: steelblue;
+            background-image: radial-gradient(darkslateblue, steelblue, darkslategray);
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        #background1 {
+            height: 500px;
+            width: 100%;
+            background-color: teal;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .container {
+            border: none !important;
+            outline: none;
+            position: relative;
+        }
+
+        .title {
+            display: block;
+            font-size: 7em;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 1);
+            line-height: 1.2;
+            text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .tagline {
+            display: block;
+            font-size: 2em;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 1);
+            line-height: 1.2;
+            text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        .subinfo {
+            display: block;
+            font-size: 1.75em;
+            font-weight: bold;
+            color:rgb(20,24,142);
+            line-height: 1.2;
+            text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .funfont {
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .body {
+            height: 100%;
+            margin: 0;
+        }
+
+        .box {
+            display: flex;
+            flex-flow: column;
+            height: 100%;
+        }
+
+        .box .row.content {
+            flex: 1 1 auto;
+        }
+
+        .box .row {
+            border: none;
+        }
+
+        .row {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: stretch;
+            width: 100% !important;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            width: 33.33333333%;
+            margin-top: 0;
+            margin-bottom: 0;
+            position: relative;
+            border-right: 4px dotted gray;
+        }
+        .image{
+            height:70px;
+            width:70px;
+        }
+    </style>
+</head>
+<body style="background-color:antiquewhite;" class="body">
+    <div class="box">
+        <div class="container">
+            <img id="gradient1" class="center" border="0" />
+            <div class="centered">
+                <span class="title">
+                    Zotclash
+                </span>
+                <span class="tagline">A Poll About UCI & More</span>
+                <div class="ui hidden divider"></div>
+                <button class="ui primary button huge" onclick="startGame()">Start Game</button>
+            </div>
+        </div>
+        <div class="row content">
+            <div class="column">
+                <h2 class="subinfo centered">
+                    <img class="image" src="questionmark2.png" />
+                    <br />
+                    Answer questions for a poll!
+                </h2>
+            </div>
+            <div class="column">
+                <h2 class="subinfo centered">
+                    <img class="image" src="data.png" />
+                    <br />
+                    See what everyone else thinks!
+                </h2>
+            </div>
+            <div class="column">
+                <h2 class="subinfo centered">
+                    <img class="image" src="redo.png" />
+                    <br />
+                    Play as many times as you want!
+                </h2>
+            </div>
+        </div>
+    </div>
+    <script>
+        function startGame() {
+            window.location.href = "http://localhost:3000/clash.html";
+        }
+    </script>
+</body>
+
