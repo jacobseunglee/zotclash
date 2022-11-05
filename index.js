@@ -3,6 +3,8 @@ const { MongoClient } = require("mongodb");
 const app = express();
 const port = 3000;
 const cors = require('cors');
+const prompt = require("./prompt");
+const session = require("./session");
 var dotenv = require('dotenv');
 dotenv.config();
 var url = process.env.MONGOLAB_URI;
@@ -117,6 +119,10 @@ app.get('/', (req, res) => {
   res.send(pairs[randInt])
   pairs.splice(randInt, 1); // Remove that element from the list so it's not repeated
 })
+
+app.get('/prompt', prompt.handlePrompt)
+
+app.get('/session', session.handleSession)
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
