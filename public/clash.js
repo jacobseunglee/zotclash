@@ -3,6 +3,10 @@ let numPairsShown = 0
 
 function grabImgData() {
 
+    if (numPairsShown == IMAGES_TO_SHOW) { // Last choice selected!
+        window.location.href = "http://localhost:3000/stats.html";
+    }
+
     myimg1 = document.getElementById("image1")
     myimg2 = document.getElementById("image2")
     text1 = document.getElementById("text1")
@@ -10,6 +14,8 @@ function grabImgData() {
     fetch('http://localhost:3000')
     .then((response) => response.json())
     .then((data) => {
+
+        
 
         choice1 = data.choices[0];
         choice2 = data.choices[1];
@@ -21,11 +27,9 @@ function grabImgData() {
         myimg2.src = choice1.image;
 
         numPairsShown++;
-        if (numPairsShown == IMAGES_TO_SHOW) { // Last image!
-            console.log("game over");
-        }
+        
     });
 
 }
 
-grabImgData()
+grabImgData() // Sets the initial state for the images and text fields
