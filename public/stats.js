@@ -26,6 +26,8 @@ fetch('../stats')
 
     for (let i = 0; i < charts.length; i++) {
         var chart = new google.visualization.PieChart(document.getElementById(`piechart${i+1}`));
+        document.getElementById(`piechart${i+1}`).style.width = "180px"
+        document.getElementById(`piechart${i+1}`).style.height = "200px"
         chart.draw(charts[i], options);
       }
 })
