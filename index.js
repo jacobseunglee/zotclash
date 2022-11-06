@@ -14,9 +14,9 @@ async function main() {
   const database = client.db("ClashData");
   const prompt = require("./prompt")(database);
   const session = require("./session")(database);
+  const increment = require("./increment")(database);
   try{  
     await client.connect();
-    await listDatabases(client);
   }
   catch (e)
   {
@@ -28,23 +28,12 @@ async function main() {
 app.use(cors())
 app.get('/prompt', prompt.handlePrompt)
 app.get('/session', session.handleSession)
-app.get('/', (req, res) => {
-  randInt = randomIntFromInterval(0, pairs.length-1);
-  res.send(pairs[randInt])
-  pairs.splice(randInt, 1); // Remove that element from the list so it's not repeated
-})
+app.get('/inc', increment.handleIncrement)
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
 }
-
-async function listDatabases(client){
-  databasesList = await client.db().admin().listDatabases();
-
-  console.log("Databases:");
-  databasesList.databases.forEach(db => console.log(` - ${db.name}`));
-};
 
 main().catch(console.error);
 client.close();
