@@ -8,9 +8,11 @@ function handlePrompt(db)
         sid = new mongo.ObjectId(sid);
         console.log(sid)
         db.collection("Sessions").findOne({_id: sid}).then(session => {
-            console.log(session)
-            const pid = session.prompts[session.index]
-            res.send({is:pid})
+            // console.log(session)
+            db.collection("Prompts").findOne({_id :session.prompts[session.index]}).then(prompt => {
+                console.log(prompt)
+                res.send(prompt)
+            })
         })
     }
     
