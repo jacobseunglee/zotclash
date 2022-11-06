@@ -1,7 +1,7 @@
 const express = require('express');
 const { MongoClient } = require("mongodb");
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const cors = require('cors');
 
 var dotenv = require('dotenv');
@@ -44,3 +44,4 @@ client.close();
 function randomIntFromInterval(min, max) { // min and max included 
   return Math.floor(Math.random() * (max - min + 1) + min)
 }
+
