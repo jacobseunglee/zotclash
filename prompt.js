@@ -9,7 +9,13 @@ function handlePrompt(db)
         console.log(sid)
         db.collection("Sessions").findOne({_id: sid}).then(session => {
             // console.log(session)
+            if (session.index >= session.prompts.length){
+                res.send(undefined)
+            }
             db.collection("Prompts").findOne({_id :session.prompts[session.index]}).then(prompt => {
+                db.collection("Sessions").updateOne(
+                    {_id: sid},
+                    { $inc: {index: 1}})
                 console.log(prompt)
                 res.send(prompt)
             })
