@@ -1,6 +1,17 @@
-function handlePrompt(x, y)
+function handlePrompt(db)
 {
-    console.log("from prompt")
+    return function(req, res)
+    {
+        console.log("from prompt");
+        sid = req.query.sid
+        db.collection("Prompts").findOne({_id: sid}).then(x => console.log(x))
+    }
+    
 }
+module.exports = function (db) 
+{
+    var module = {};
+    module.handlePrompt = handlePrompt(db);
 
-module.exports = {handlePrompt};
+    return module;
+}
