@@ -9,6 +9,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js"
             integrity="sha512-Xo0Jh8MsOn72LGV8kU5LsclG7SUzJsWGhXbWcYs2MAmChkQzwiW/yTQwdJ8w6UA9C6EVG18GHb/TrYpYCjyAQw=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="stats.js"></script>
+    <script src="clash.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css"
           integrity="sha512-KXol4x3sVoO+8ZsWPFI/r5KBVB/ssCGB5tsv2nVOKwLg33wTFP3fmnXa47FdSVIshVTgsYk/1734xSk9aFIa4A=="
           crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -84,7 +87,7 @@
         }
     </style>
 </head>
-<body class="body" style="background: radial-gradient(darkslateblue, steelblue, darkslategray); ">
+<body onload="getStats()" class="body" style="background: radial-gradient(darkslateblue, steelblue, darkslategray); ">
     <div class="box">
         <div class="row header">
             <div class="title centered">
