@@ -72,8 +72,8 @@ async function main() {
   const prompts = database.collection("Prompts");
   const counters = database.collection("Counters");
   try{
-    counters.deleteMany({});
-    prompts.deleteMany({});
+    // counters.deleteMany({});
+    // prompts.deleteMany({});
     await client.connect();
     await listDatabases(client);
     
