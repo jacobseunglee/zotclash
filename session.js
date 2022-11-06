@@ -42,7 +42,7 @@ async function addSession(sessions, array)
     try
     {
 
-        docID = await sessions.insertOne({"prompts": {array},
+        docID = await sessions.insertOne({"prompts": array,
         "index" : 0});
         return docID.insertedId;
     }
