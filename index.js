@@ -29,6 +29,7 @@ app.use(cors())
 app.get('/prompt', prompt.handlePrompt)
 app.get('/session', session.handleSession)
 app.get('/inc', increment.handleIncrement)
+app.use('/public', express.static('public'))
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

@@ -16,7 +16,7 @@ function handleSession(db)
         var id = addSession(sessions, a).then((id)=>
         {
             console.log(id)
-            res.send(id)
+            res.send({id: id})
         })
 
         
