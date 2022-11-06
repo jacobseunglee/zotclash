@@ -6,15 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="styles.css">
+    <!-- JQuery dependency -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+            integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+    <!-- ADD SEMANTIC UI LIBRARY SOURCE CODE -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js"
+            integrity="sha512-Xo0Jh8MsOn72LGV8kU5LsclG7SUzJsWGhXbWcYs2MAmChkQzwiW/yTQwdJ8w6UA9C6EVG18GHb/TrYpYCjyAQw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css"
+          integrity="sha512-KXol4x3sVoO+8ZsWPFI/r5KBVB/ssCGB5tsv2nVOKwLg33wTFP3fmnXa47FdSVIshVTgsYk/1734xSk9aFIa4A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ZotClash</title>
 </head>
+<style>
+    .tagline {
+            display: block;
+            font-size:2em;
+            font-weight: bold;
+            color:black;
+            line-height: 1.2;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    .centered {
+        position: absolute;
+        height: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+       }
+    .box{
+        display: flex;
+        flex-flow: column;
+        height: 100%;
+    }
+    .box .row {
+            border: none;
+    }
+    .box .row.header {
+            flex: 0 1 60px;
+            
+        }
+</style>
 
 <body>
-
+    <div class="box">
+        
+    
     <center>
-        <h1>
-            WHO WINS?
-        </h1>
+        <div class="row header">
+            <div class="tagline" style="text-align:center;">Who Wins?</div>
+            
+        </div>
         <div class="row">
             <div class="column">
                 <div class="container">
@@ -32,6 +77,7 @@
             </div>
           </div>        
     </center>
+</div>
 
     <script src="clash.js"></script>
 </body>
