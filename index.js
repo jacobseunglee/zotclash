@@ -15,6 +15,7 @@ async function main() {
   const prompt = require("./prompt")(database);
   const session = require("./session")(database);
   const increment = require("./increment")(database);
+  const stats = require("./stats")(database);
   try{  
     await client.connect();
   }
@@ -29,6 +30,7 @@ app.use(cors())
 app.get('/prompt', prompt.handlePrompt)
 app.get('/session', session.handleSession)
 app.get('/inc', increment.handleIncrement)
+app.get('/stats', stats.handleStats)
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
