@@ -2,6 +2,7 @@ const IMAGES_TO_SHOW = 10
 let numPairsShown = 0
 
 
+
 myimg1 = document.getElementById("image1")
 myimg2 = document.getElementById("image2")
 text1 = document.getElementById("text1")
@@ -13,10 +14,11 @@ function grabImgData() {
         window.location.href = "http://localhost:3000/stats.html";
     }
 
-    fetch('http://localhost:3000')
+    fetch(`http://localhost:3000/prompt?sid=${SESSION_ID.id}`)
     .then((response) => response.json())
     .then((data) => {
 
+        console.log(data);
         choice1 = data.choices[0];
         choice2 = data.choices[1];
 
@@ -32,4 +34,11 @@ function grabImgData() {
 
 }
 
-grabImgData() // Sets the initial state for the images and text fields
+
+
+fetch('http://localhost:3000/session')
+.then((response) => response.json())
+.then((data) => {
+    SESSION_ID = data;
+    grabImgData() // Sets the initial state for the images and text fields
+})

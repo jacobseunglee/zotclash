@@ -30,6 +30,7 @@ app.use(cors())
 app.get('/prompt', prompt.handlePrompt)
 app.get('/session', session.handleSession)
 app.get('/inc', increment.handleIncrement)
+app.use('/public', express.static('public'))
 app.get('/stats', stats.handleStats)
 
 app.listen(port, () => {
