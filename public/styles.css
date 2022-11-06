@@ -1,5 +1,6 @@
 .row {
     display: flex;
+    padding: 100px;
 }
   
   /* Create three equal columns that sits next to each other */
@@ -11,7 +12,7 @@
 img {
     float: left;
     width:  120px;
-    height: 350px;
+    height: 400px;
     object-fit: cover;
     /* opacity: 0.5; */
     -webkit-user-drag: none;
@@ -20,13 +21,22 @@ img {
     -webkit-user-select: none;
     -ms-user-select: none;
     border: 10px solid black;
+    border-radius: 60px
+    
 }
 
 .top-middle {
     text-align: center;
     position: relative;
     top: 50px;
+    color: blue;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
+    font-weight: bold;
+    text-shadow: -0.5px 0.5px 0.5px white,
+				  0.5px 0.5px 0.5px white,
+				  0.5px -0.5px 0 white,
+				  -0.5px -0.5px 0 white;
+    letter-spacing: 1px;
 
 }

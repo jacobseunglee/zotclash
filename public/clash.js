@@ -34,8 +34,6 @@ function grabImgData() {
 
 }
 
-
-
 fetch('http://localhost:3000/session')
 .then((response) => response.json())
 .then((data) => {
