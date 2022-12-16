@@ -7,5 +7,5 @@ Step 1: Clone the repository
 #
 Step 2: Open on preferred IDE and run npm start
 #
-Step 3: You should now be hosting the app on your localhost
+Step 3: You should now be hosting the app on your localhost:####/public
 #
